@@ -1,0 +1,39 @@
+import QtQuick 2.6
+import QtQuick.Window 2.2
+
+
+import TaoQuick 1.0 as Tao
+import CppType 1.0
+Window {
+
+    id: root
+    visible: true
+    width: 640
+    height: 480
+    title: qsTr("Hello World")
+    color:"green"
+	signal qmlSignalA
+	
+
+
+
+
+	ConfigAdapter{
+        id:cpp_obj
+        //也可以像原生QML对象一样操作，增加属性之类的
+    }
+
+	MouseArea{
+        anchors.fill: parent
+        //测试时点击左键或右键
+        onClicked: {
+                root.qmlSignalA()
+              console.log('----qml 点击右键：QML发射信号')
+        }
+    }
+
+    Component.onCompleted: {
+        root.onQmlSignalA.connect(cpp_obj.cppSlotA)
+    }
+
+}

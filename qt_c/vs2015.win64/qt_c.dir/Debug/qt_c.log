@@ -1,0 +1,4 @@
+﻿  Automatic MOC for target qt_c
+  Automatic RCC for my_src/qml/qml.qrc
+  qrc_qml.cpp
+  qt_c.vcxproj -> E:\work\tao_pt\qt_c\vs2015.win64\Debug\qt_c.exe
